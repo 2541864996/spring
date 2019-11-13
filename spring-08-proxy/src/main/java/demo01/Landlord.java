@@ -1,3 +1,5 @@
+package demo01;
+
 //房东租房
 public class Landlord implements Renting{
     public void renting() {

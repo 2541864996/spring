@@ -1,3 +1,5 @@
+package demo01;
+
 public class My {
     public static void main(String[] args) {
         //找到中介

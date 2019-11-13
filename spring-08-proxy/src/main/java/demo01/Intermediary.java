@@ -1,3 +1,5 @@
+package demo01;
+
 //中介
 public class Intermediary implements Renting{
     //中介需要一个房东才可以进行租房

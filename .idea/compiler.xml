@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="spring-08-proxy" />
+        <module name="spring-09-aop" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="spring-01" target="1.5" />
+      <module name="spring-06-note" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

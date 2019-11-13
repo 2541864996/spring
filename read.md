@@ -215,10 +215,114 @@ class User{
 <bean id="user" class="com.User" scope="prototype"/>
 ```
 
+###ByName自动装配
+```xml
+<bean id="dog" class="com.Dog"/>
+<bean id="cat" class="com.Cat"/>
+<!--byname:会自动在容器上下文中查找，和自己对象的set方法后面值对应的beanid-->
+<bean id="people" class="com.People" autowire="byName"/>
+```
 
+###ByType自动装配
+```xml
+<bean id="dog" class="com.Dog"/>
+<bean id="cat" class="com.Cat"/>
+<!--byname:会自动在容器上下文中查找，和自己对象的set方法后面值对应的beanid-->
+<bean id="people" class="com.People" autowire="byType"/>
+```
+小结:byName的时候需要保证beanid的唯一，并且这个bean需求和自动注入的属性set方法的值一致
+     byType的时候需要保证所有的bean的class唯一，并且这个bean需要和自动注入的属性类型一致
 
+###Autowired注解
+```java
+class User{
+    private Cat cat;
+    private Dog dog;
+}
+```
+>如果bean中有Cat和Dog这两个的bean就可以利用@Autowired来赋值
+
+>但是要在xml中引入：xmlns:aop="http://www.springframework.org/schema/aop"
+
+>并且在xsi:schemaLocation中添加
+>http://www.springframework.org/schema/aop
+ http://www.springframework.org/schema/aop/spring-aop.xsd
+>
+>开启注解支持
+><context:annotation-config/>
+>
+>指定扫描的包
+><context:component-sacn base-package="com.xxx"/>
+####属性注入
+```java
+@Component
+public class User{
+    public String name;
+    @Value("wxm")
+    public void setName(String name){
+        this.name=name;
+    }
+}
+```
+
+###纯java代码配置Bean
+实体类
+```java
+@Component
+public class User{
+    private String name;
+    public String getName(){
+        return name;
+    }
+    @Value("wxm")//属性注入
+    public void setName(String name){
+        this.name=name;
+    }
+
+}
+```
+配置类
+```java
+@Configuration//代表一个配置类，相当于一个bean.xml文件
+@ComponentScan("com")//要扫描的包
+@Import(Config2.class)//引入其他的配置类
+public class Config1{
+    @Bean//方法名就是bean的id ，返回值就是bean的class
+    public User user(){
+        return new User();
+    }
+}
+```
+获取
+```java
+ApplicationContext context=new AnnotationConfigApplicationContext(Config1.class);
+User user=context.getBean("user",User.class);
+```
+利用AnnotationConfigApplicationContext来读取一个配置类
+
+获得ApplicationContext容器
 ##spring注解说明
 - @Autowired:自动装配通过类型，名字
     如果Autowired不能唯一自动装配上属性，则需要通过@Qualifier(value="xxx")
 - @Nullable :字段标记了这个注解，说明这个字段可以为null;
 - @Resource :自动装配通过名字，类型
+- @Component有几个衍生注解，在为欧盟web开发中会按照mvc三层架构分层
+
+      dao：@Repository
+      service:@Service
+      controller:@Controller
+      这4个注解功能都是一页的，都代表将某个类注册到spring中，装配bean
+- @Scope("prototype")原型模式   singleton单例模式(将注解放到类上即可，前提这个类由spring托管)
+
+
+##AOP
+依赖
+```xml
+<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
+<dependency>
+    <groupId>org.aspectj</groupId>
+    <artifactId>aspectjweaver</artifactId>
+    <version>1.9.4</version>
+</dependency>
+
+```

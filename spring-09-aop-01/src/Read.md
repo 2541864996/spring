@@ -81,5 +81,5 @@ public class MyTest {
 }
 ```
 结果：
-![Image text](https://github.com/2541864996/spring-/blob/master/spring-09-aop/src/main/resources/img/%E7%BB%93%E6%9E%9C.png?raw=true)
+![Image text](https://github.com/2541864996/spring-/blob/master/spring-09-aop-01/src/main/resources/img/%E7%BB%93%E6%9E%9C.png?raw=true)
 

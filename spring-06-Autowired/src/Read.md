@@ -1,15 +1,15 @@
 ####ByName自动装配
 ```xml
 <bean id="cat" class="demo01.Cat"/>
-<bean id="dog" class="demo01.Dog"/>
+<bean id="dog" class="demo01.com.Dog"/>
 <!--byname:会自动在容器上下文中查找，和自己对象的set方法后面值对应的beanid-->
-<bean id="user" class="demo01.User" autowire="byName"/>
+<bean id="user" class="demo01.com.User" autowire="byName"/>
 ```
 
 ####ByType自动装配
 ```xml
 <bean id="cat" class="demo01.Cat"/>
-<bean id="dog" class="demo01.Dog"/>
+<bean id="dog" class="demo01.com.Dog"/>
 <!--byname:会自动在容器上下文中查找，和自己对象的set方法后面值对应的beanid-->
 <bean id="user2" class="demo01.User2" autowire="byType"/>
 ```
@@ -20,7 +20,7 @@
 
 ###Autowired注解
 ```java
-class User{
+class com.User{
      //自动注入 也可以写到set方法上面
      @Autowired
      private Bolt bolt;

@@ -9,7 +9,7 @@
         <property name="str" value="成都。天府新区。华阳"/>
     </bean>
 
-    <bean id="user" class="User">
+    <bean id="user" class="com.User">
         <!--普通注入-->
         <property name="name" value="wxm"/>
         <property name="age" value="19"/>
@@ -44,7 +44,7 @@
     </bean>
 
     <!--p命名空间-->
-    <bean id="dog" class="Dog" p:age="0.6" p:name="球球"/>
+    <bean id="dog" class="com.Dog" p:age="0.6" p:name="球球"/>
 
     <!--c命名空间-->
     <bean id="hamster" class="Hamster" c:name="布丁"/>

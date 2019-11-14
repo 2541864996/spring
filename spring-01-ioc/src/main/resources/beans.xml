@@ -3,8 +3,8 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="user" class="com.User"/>
+    <bean id="user" class="com.com.User"/>
     <bean id="cat" class="com.Cat"/>
-    <bean id="dog" class="com.Dog"/>
+    <bean id="dog" class="com.com.Dog"/>
 </beans>
 

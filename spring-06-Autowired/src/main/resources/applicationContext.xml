@@ -5,9 +5,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="cat" class="demo01.Cat"/>
-    <bean id="dog" class="demo01.Dog"/>
+    <bean id="dog" class="demo01.com.Dog"/>
     <!--byname:会自动在容器上下文中查找，和自己对象的set方法后面值对应的beanid-->
-    <bean id="user" class="demo01.User" autowire="byName"/>
+    <bean id="user" class="demo01.com.User" autowire="byName"/>
 
     <!--byname:会自动在容器上下文中查找，和自己对象的set方法后面值对应的beanid-->
     <bean id="user2" class="demo01.User2" autowire="byType"/>

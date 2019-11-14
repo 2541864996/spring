@@ -2,7 +2,7 @@
 >如果添加了别名，我们也可以使用这个别名获取这个对象
 >如：
 ```xml
- <bean id="user" class="demo01.User"/>
+ <bean id="user" class="demo01.com.User"/>
  <!--别名-->
  <alias name="user" alias="user2"/>
  <!--name 就是一个bean的id值;alias 就是要修改的别名-->
@@ -11,7 +11,7 @@
 
 - Bean上配置别名
 ```xml
-<bean id="user" class="demo01.User" name="user2 user3,user4;user5"/>
+<bean id="user" class="demo01.com.User" name="user2 user3,user4;user5"/>
 <!--id就是当前bean的唯一标识，相当于名字  class是这个bean的类型(类全限定名)  name是这个叫user的bean的别名(可以有多个,逗号 空格 分号都能进行分割)-->
 ```
 

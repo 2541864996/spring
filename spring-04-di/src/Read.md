@@ -44,7 +44,7 @@
 6.p命名空间注入，可直接注入属性的值：property
 ```xml
  <!--p命名空间-->
- <bean id="dog" class="Dog" p:age="0.6" p:name="球球"/>
+ <bean id="dog" class="com.Dog" p:age="0.6" p:name="球球"/>
 <!--使用前提
     在bean.xml引入 xmlns:p="http://www.springframework.org/schema/p"
     属性必须有set方法

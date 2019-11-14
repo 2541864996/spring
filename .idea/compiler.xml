@@ -6,7 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="spring-01-ioc" />
+        <module name="spring-07-note" />
         <module name="spring-06-Autowired" />
         <module name="spring-02-di" />
         <module name="spring-03-ioc" />
@@ -26,6 +26,7 @@
       <module name="spring-04-di" target="1.5" />
       <module name="spring-05-actionScope" target="1.5" />
       <module name="spring-06-Autowired" target="1.5" />
+      <module name="spring-07-note" target="1.5" />
       <module name="spring-08-proxy" target="1.5" />
       <module name="spring-09-aop" target="1.5" />
       <module name="spring-09-aop-01" target="1.5" />

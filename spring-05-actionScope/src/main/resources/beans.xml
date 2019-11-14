@@ -6,7 +6,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!--单例 默认-->
-    <bean id="user" class="User" scope="singleton"/>
+    <bean id="user" class="com.User" scope="singleton"/>
     <!--原型-->
-   <!-- <bean id="user" class="User" scope="prototype"/>-->
+   <!-- <bean id="user" class="com.User" scope="prototype"/>-->
 </beans>

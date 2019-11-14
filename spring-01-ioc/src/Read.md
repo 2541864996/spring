@@ -11,16 +11,16 @@
 ```
 - 将类放入容器中
 ```xml
-    <bean id="user" class="com.User"/>
+    <bean id="user" class="com.com.User"/>
     <bean id="cat" class="com.Cat"/>
-    <bean id="dog" class="com.Dog"/>
+    <bean id="dog" class="com.com.Dog"/>
 ```
 - 获取
 ```java
  public static void main(String[] args) {
     ApplicationContext context= new ClassPathXmlApplicationContext("beans.xml");
-    User user = context.getBean("user", User.class);
-    Dog dog=context.getBean("dog", Dog.class);
+    com.User user = context.getBean("user", com.User.class);
+    com.Dog dog=context.getBean("dog", com.Dog.class);
     Cat cat=context.getBean("cat", Cat.class);
 }
 ```

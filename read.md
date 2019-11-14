@@ -63,42 +63,9 @@
 
 ###自动装配【spring-06-Autowired】
 
-###纯java代码配置Bean
-实体类
-```java
-@Component
-public class User{
-    private String name;
-    public String getName(){
-        return name;
-    }
-    @Value("wxm")//属性注入
-    public void setName(String name){
-        this.name=name;
-    }
+###纯java代码配置Bean【spring-07-note】
 
-}
-```
-配置类
-```java
-@Configuration//代表一个配置类，相当于一个bean.xml文件
-@ComponentScan("com")//要扫描的包
-@Import(Config2.class)//引入其他的配置类
-public class Config1{
-    @Bean//方法名就是bean的id ，返回值就是bean的class
-    public User user(){
-        return new User();
-    }
-}
-```
-获取
-```java
-ApplicationContext context=new AnnotationConfigApplicationContext(Config1.class);
-User user=context.getBean("user",User.class);
-```
-利用AnnotationConfigApplicationContext来读取一个配置类
 
-获得ApplicationContext容器
 ##spring注解说明
 - @Autowired:自动装配通过类型，名字
     如果Autowired不能唯一自动装配上属性，则需要通过@Qualifier(value="xxx")

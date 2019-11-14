@@ -62,55 +62,6 @@
 2.原型模式:每次从容器中取出的都是一个新的对象
 
 ###自动装配【spring-06-Autowired】
-####ByName自动装配
-```xml
-<bean id="dog" class="com.Dog"/>
-<bean id="cat" class="com.Cat"/>
-<!--byname:会自动在容器上下文中查找，和自己对象的set方法后面值对应的beanid-->
-<bean id="people" class="com.People" autowire="byName"/>
-```
-
-####ByType自动装配
-```xml
-<bean id="dog" class="com.Dog"/>
-<bean id="cat" class="com.Cat"/>
-<!--byname:会自动在容器上下文中查找，和自己对象的set方法后面值对应的beanid-->
-<bean id="people" class="com.People" autowire="byType"/>
-```
-小结:byName的时候需要保证beanid的唯一，并且这个bean需求和自动注入的属性set方法的值一致
-     byType的时候需要保证所有的bean的class唯一，并且这个bean需要和自动注入的属性类型一致
-
-###Autowired注解
-```java
-class User{
-    private Cat cat;
-    private Dog dog;
-}
-```
->如果bean中有Cat和Dog这两个的bean就可以利用@Autowired来赋值
-
->但是要在xml中引入：xmlns:aop="http://www.springframework.org/schema/aop"
-
->并且在xsi:schemaLocation中添加
->http://www.springframework.org/schema/aop
- http://www.springframework.org/schema/aop/spring-aop.xsd
->
->开启注解支持
-><context:annotation-config/>
->
->指定扫描的包
-><context:component-sacn base-package="com.xxx"/>
-####属性注入
-```java
-@Component
-public class User{
-    public String name;
-    @Value("wxm")
-    public void setName(String name){
-        this.name=name;
-    }
-}
-```
 
 ###纯java代码配置Bean
 实体类

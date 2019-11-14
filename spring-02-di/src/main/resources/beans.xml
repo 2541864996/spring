@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="cat" class="com.Cat"/>
+    <bean id="dog" class="com.Dog"/>
+
+    <!--下标注入-->
+    <!--<bean id="user" class="com.User">
+        <constructor-arg index="0" ref="dog"/>
+        <constructor-arg index="1" ref="cat"/>
+    </bean>-->
+
+    <!--类型注入-->
+    <!--<bean id="user" class="com.User">
+        <constructor-arg type="com.Dog" ref="dog"/>
+        <constructor-arg type="com.Cat" ref="cat"/>
+    </bean>-->
+
+    <!--参数名注入-->
+    <bean id="user" class="com.User">
+        <constructor-arg name="cat" ref="cat"/>
+        <constructor-arg name="dog" ref="dog"/>
+    </bean>
+</beans>
+

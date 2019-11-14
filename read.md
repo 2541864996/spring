@@ -25,25 +25,8 @@
 ###控制反转
 - 就是对象由spring来创建管理、装配
 ###Bean容器
-- 相当于Bean的配置文件
-```java
-//通过配置bean.xml来管理对象
-//先创建beans.xml 引入模板
-/**<?xml version="1.0" encoding="UTF-8"?>
-  *<beans xmlns="http://www.springframework.org/schema/beans"
-  *   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  *   xmlns:p="http://www.springframework.org/schema/p"
-  *   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-  *    <bean id="user" calss="User">
-  *        <property name="name" value="啊黄"/>    
-  *    </bean>
-  *</beans>
-  */
-//配置bean
-//<property可以给属性设值 value是普通值 ref是引用一个bean>
-//利用ApplicationContext context= new ClassPathXmlApplicationContext("beans.xml");
-//User user=context.getBean("user",User.class);
-```
+- 相当于Bean的配置文件【spring-01-ioc】
+
 - 控制：谁来控制对象的创建，传统应用程序中的对象是由程序本身控制创建的，使用spring后只要将对象配置到bean中，对象就有spring来创建
 - 反转：程序本身不创建对象，而变成被动的接收对象
 - IOC的一种编程思想,由主动的编程变为被动的接收
@@ -65,40 +48,7 @@
     </dependency>
 ```
 ##IOC创建对象的方式
-###有参构造器注入
-- 下标
-```xml
-<bean id="user" class="com.User">
-    <constructor-ary index="0" value="xxx"/>
-    <!--要使用有参构造必须给类的属性赋值
-        index代表下标,0代表第一个参数
-        value代表这个参数的值
-    -->
-</bean>
-```
-- 类型
-```xml
-<bean id="user" class="com.User">
-    <constructor-ary type="java.lang.String" value="xxx"/>
-    <!--要使用有参构造必须给类的属性赋值
-        type类型,根据类型来匹配构造器中的值类型匹配的
-        value代表这个参数的值
-        弊端：多个相同类型就会出错
-    -->
-</bean>
-```
-- 参数名
-```xml
-<bean id="user" class="com.User">
-    <constructor-ary name="name" value="xxx"/>
-    <!--要使用有参构造必须给类的属性赋值
-        name代表构造器中的方法名
-        value就是要注入的值
-    -->
-</bean>
-```
-总结：在配置文件加载的时候，容器中管理的对象已经初始化了
-ApplicationContext:就代表着Spring容器
+【spring-02-di】
 
 ###Spring的配置
 - 别名

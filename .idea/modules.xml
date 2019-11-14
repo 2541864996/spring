@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/spring-.iml" filepath="$PROJECT_DIR$/.idea/spring-.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-01-ioc/spring-01-ioc.iml" filepath="$PROJECT_DIR$/spring-01-ioc/spring-01-ioc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-02-di/spring-02-di.iml" filepath="$PROJECT_DIR$/spring-02-di/spring-02-di.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-03-ioc/spring-03-ioc.iml" filepath="$PROJECT_DIR$/spring-03-ioc/spring-03-ioc.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-08-proxy/spring-08-proxy.iml" filepath="$PROJECT_DIR$/spring-08-proxy/spring-08-proxy.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-09-aop-01/spring-09-aop-01.iml" filepath="$PROJECT_DIR$/spring-09-aop-01/spring-09-aop-01.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-09-aop-02/spring-09-aop-02.iml" filepath="$PROJECT_DIR$/spring-09-aop-02/spring-09-aop-02.iml" />

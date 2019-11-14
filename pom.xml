@@ -13,6 +13,9 @@
         <module>spring-09-aop-01</module>
         <module>spring-09-aop-02</module>
         <module>spring-09-aop-03</module>
+        <module>spring-01-ioc</module>
+        <module>spring-02-di</module>
+        <module>spring-03-ioc</module>
     </modules>
 
    <dependencies>

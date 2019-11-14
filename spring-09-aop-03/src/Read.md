@@ -45,7 +45,8 @@ public class AnnotationPointCut {}
 ```
 结果
 
-![Image text]()
+![Image text](https://github.com/2541864996/spring-/blob/master/spring-09-aop-03/src/main/resources/img/ceshi.png?raw=true)
+
 - @Around(切点【"execution(* service.UserServiceImpl.*(..))"】)
 ```java
     @Around("execution(* service.UserServiceImpl.*(..))")
@@ -54,3 +55,5 @@ public class AnnotationPointCut {}
         System.out.println("签名:"+signature);
     }
 ```
+>可以利用@Around注解 给方法传入一个ProceedingJoinPoint pj
+>利用pj.getSignature();可以获取到

@@ -8,7 +8,7 @@
             <version>1.9.3</version>
         </dependency>
 ```
-####第二种方式(自定义实现AOP【】)
+####第二种方式(自定义实现AOP【主要是切面定义】)
 - 创建一个切面的类(DiyPointCut)
 - 定义一些切入的方法
 ```java

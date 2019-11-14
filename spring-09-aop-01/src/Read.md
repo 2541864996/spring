@@ -59,7 +59,7 @@ public class AfterLog  implements AfterReturningAdvice {
 ```xml
     <!--方式一：使用原生的Spring api接口-->
     <aop:config>
-        <!--切入点 expression:表达式 【execution(修饰词 返回值 类名 方法名 参数)】(固定写法)-->
+        <!--切入点 expression:表达式 【execution(返回类型 包名 类 方法名(参数))】(固定写法)-->
         <aop:pointcut id="UserServicePointcut" expression="execution(* service.UserServiceImpl.*(..))"/>
         <aop:pointcut id="UserServicePointcut2" expression="execution(* service.UserServiceImpl.add())"/>
 

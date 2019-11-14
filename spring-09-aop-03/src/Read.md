@@ -1,6 +1,21 @@
 ###SpringAOP.3
 ####第三种方式(注解实现)
 - 创建切面类（AnnotationPointCut）
+- 配置bean(创建xml文件)
+>引入 xmlns:aop="http://www.springframework.org/schema/aop"
+>http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd">
+</beans>
+```
 - 开启spring注解支持
 ```xml
     <!--开启注解支持-->
@@ -56,4 +71,5 @@ public class AnnotationPointCut {}
     }
 ```
 >可以利用@Around注解 给方法传入一个ProceedingJoinPoint pj
->利用pj.getSignature();可以获取到
+>利用pj.getSignature();可以获取到当前运行的方法名
+![Image text](https://github.com/2541864996/spring-/blob/master/spring-09-aop-03/src/main/resources/img/ceshi2.png?raw=true)

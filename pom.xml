@@ -11,6 +11,8 @@
     <modules>
         <module>spring-08-proxy</module>
         <module>spring-09-aop</module>
+        <module>spring-09-aop-2</module>
+        <module>spring-09-aop-02</module>
     </modules>
 
    <dependencies>

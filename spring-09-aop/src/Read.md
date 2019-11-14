@@ -1,4 +1,4 @@
-###Spring的动态代理
+###SpringAOP.1
 必须依赖
 ```xml
 <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
@@ -8,7 +8,7 @@
             <version>1.9.3</version>
         </dependency>
 ```
-####第一种方式(原生模式)
+####第一种方式(Spring的API接口【主要是springAPI实现】)
 - 创建log(日志)类
 - 实现spring的接口MethodBeforeAdvice(前置的通知)
 ```java

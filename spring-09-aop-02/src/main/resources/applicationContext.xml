@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--注册bean-->
+    <bean id="userService" class="service.UserServiceImpl"/>
+    <bean id="diy" class="diy.DiyPointCut"/>
+
+    <aop:config>
+        <!--自定义切面 定义一个类为切面-->
+        <aop:aspect ref="diy">
+            <!--切入点-->
+            <aop:pointcut id="userServicePointcut" expression="execution(* service.UserServiceImpl.*(..))"/>
+            <!--通知 将什么方法切入到什么类中-->
+            <aop:after method="before" pointcut-ref="userServicePointcut"/>
+            <aop:before method="later" pointcut-ref="userServicePointcut"/>
+        </aop:aspect>
+    </aop:config>
+</beans>

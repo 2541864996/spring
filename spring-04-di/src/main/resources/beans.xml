@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="address" class="Address">
+        <property name="str" value="成都。天府新区。华阳"/>
+    </bean>
+
+    <bean id="user" class="User">
+        <!--普通注入-->
+        <property name="name" value="wxm"/>
+        <property name="age" value="19"/>
+        <!--bean注入-->
+        <property name="address" ref="address"/>
+
+        <!--数组-->
+        <property name="books">
+            <array>
+                <value>语文书</value>
+                <value>数学书</value>
+                <value>英语书</value>
+            </array>
+        </property>
+
+        <!--list-->
+        <property name="hobbys">
+            <list>
+                <value>玩游戏</value>
+                <value>看电影</value>
+                <value>唱歌</value>
+            </list>
+        </property>
+
+        <!--map-->
+        <property name="card">
+            <map>
+                <entry key="学生卡" value="4185451"/>
+                <entry key="身份证" value="15165165"/>
+             </map>
+        </property>
+    </bean>
+
+    <!--p命名空间-->
+    <bean id="dog" class="Dog" p:age="0.6" p:name="球球"/>
+
+    <!--c命名空间-->
+    <bean id="hamster" class="Hamster" c:name="布丁"/>
+
+</beans>

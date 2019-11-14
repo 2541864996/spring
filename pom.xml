@@ -16,6 +16,9 @@
         <module>spring-01-ioc</module>
         <module>spring-02-di</module>
         <module>spring-03-ioc</module>
+        <module>spring-04-di</module>
+        <module>spring-05-actionScope</module>
+        <module>spring-06-Autowired</module>
     </modules>
 
    <dependencies>

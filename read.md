@@ -48,124 +48,21 @@
     </dependency>
 ```
 ##IOC创建对象的方式
-【spring-02-di】
+###利用构造方法创建bean【spring-02-di】
 
-###Spring的配置
+###Spring的配置【spring-03-ioc】
 - 别名
->如果添加了别名，我们也可以使用这个别名获取这个对象
->如：
-```xml
-<alias name="user" alias="newUser"/>
-<!--name 就是一个bean的id值;alias 就是要修改的别名-->
-<!--getBean时即可以用原来的user也可以用这个别名获取-->
-```
-
-- Bean的配置
-```xml
-<bean id="user" class="com.User" name="u1 u2,u3;u4"/>
-<!--id就是当前bean的唯一标识，相当于名字  class是这个bean的类型(类全限定名)  name是这个叫user的bean的别名(可以有多个,逗号 空格 分号都能进行分割)-->
-```
-
+- Bean上配置别名
 - import:适用于团队开发
->假设有多人在开发程序,每个人都有他的类和他的beans.xml文件
->
->我们就可以设置一个总的application.xml文件,在中引入其他人的xml就可以了
-```xml
-<import resource="beans1.xml"/>
-<import resource="beans2.xml"/>
-<import resource="beans3.xml"/>
-```
->最后只要读取这个application.xml文件就可以获取到引入中的bean
 
-###依赖注入(利用set方法)
-```java
-//利用下方的一些注入方式给这个类注入属性值
-class User{
-    private String age;
-    private String name;
-    private Address address;
-    private String[] books;
-    private List<String> hobbys;
-    private Map<String,String> card;
-    //get和set方法
-}
-```
-1.普通注入
-```xml
-<bean id="user" class="com.User">
-    <property name="name" value="wxm"/>
-</bean>
-```
-2.bean注入
-```xml
-<bean id="user" class="com.User">
-    <property name="address" ref="address"/>
-    <!--name为set方法中的名字  ref 就是引用一个叫某某某的bean-->
-</bean>
-```
-3.数组
-```xml
-<bean id="user" class="com.User">
-    <property name="books">
-        <array>
-            <value>红楼梦</value>
-            <value>西游记</value>
-            <value>三国演义</value>
-        </array>
-    </property>
-    <!--name为set方法中的名字(当前这个是个数组,要给他注入值)-->
-</bean>
-```
-4.List集合
-```xml
-<bean id="user" class="com.User">
-    <property name="hobbys">
-        <list>
-            <value>听歌</value>
-            <value>玩游戏</value>
-        </list>
-    </property>
-    <!--name为set方法中的名字(这是个list集合)-->
-</bean>
-```
-5.Map
-```xml
-<bean id="user" class="com.User">
-    <property name="card">
-        <map>
-            <entry key="学生卡" value="1213123123"/>
-            <entry key="身份证" value="1213123123"/>
-        </map>
-    </property>
-</bean>
-```
-6.p命名空间注入，可直接注入属性的值：property
-```xml
-<bean id="user" class="User" p:name="wxm" p:age="19"/>
-<!--使用前提
-    在bean.xml引入 xmlns:p="http://www.springframework.org/schema/p"
-    属性必须有set方法
--->
-```
-7.c命名空间注入,通过构造器注入，construct
-```xml
-<bean id="user" class="User" c:name="wxm" c:age="19"/>
-<!--使用前提
-    在bean.xml引入 xmlns:c="http://www.springframework.org/schema/c"
-    类必须有有参构造器
--->
-```
-###Bean的作用域
+###依赖注入(利用set方法)【spring-04-di】
+
+###Bean的作用域【spring-05-actionScope】
 1.单例模式(默认)，全部的User对象都只有一个
-```xml
-<bean id="user" class="com.User" scope="singleton"/>
-```
 2.原型模式:每次从容器中取出的都是一个新的对象
-```xml
-<bean id="user" class="com.User" scope="prototype"/>
-```
 
-###ByName自动装配
+###自动装配【spring-06-Autowired】
+####ByName自动装配
 ```xml
 <bean id="dog" class="com.Dog"/>
 <bean id="cat" class="com.Cat"/>
@@ -173,7 +70,7 @@ class User{
 <bean id="people" class="com.People" autowire="byName"/>
 ```
 
-###ByType自动装配
+####ByType自动装配
 ```xml
 <bean id="dog" class="com.Dog"/>
 <bean id="cat" class="com.Cat"/>

@@ -11,8 +11,9 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="spring-01" target="1.5" />
-      <module name="spring-06-note" target="1.5" />
+      <module name="spring-" target="1.5" />
+      <module name="spring-08-proxy" target="1.5" />
+      <module name="spring-09-aop" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

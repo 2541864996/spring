@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--注册bean-->
+    <bean id="userService" class="service.UserServiceImpl"/>
+    <bean id="afterLog" class="log.AfterLog"/>
+    <bean id="log" class="log.Log"/>
+
+    <!--方式一：使用原生的Spring api接口-->
+    <!--配置aop:需要导入aop的约束
+         xmlns:aop="http://www.springframework.org/schema/aop"
+         http://www.springframework.org/schema/aop
+         http://www.springframework.org/schema/aop/spring-aop.xsd
+    -->
+    <aop:config>
+        <!--切入点 expression:表达式 【execution(修饰词 返回值 类名 方法名 参数)】(固定写法)-->
+        <aop:pointcut id="UserServicePointcut" expression="execution(* service.UserServiceImpl.*(..))"/>
+        <aop:pointcut id="UserServicePointcut2" expression="execution(* service.UserServiceImpl.add())"/>
+
+        <!--执行环绕增强-->
+        <!--advice-ref：切入类 pointcut-ref：被切入的类-->
+        <aop:advisor advice-ref="log" pointcut-ref="UserServicePointcut"/>
+        <aop:advisor advice-ref="afterLog" pointcut-ref="UserServicePointcut"/>
+    </aop:config>
+</beans>

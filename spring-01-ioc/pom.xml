@@ -13,6 +13,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>spring-07-note</module>
+        <module>../spring-10-mybatis</module>
+        <module>../spring-11-transaction</module>
     </modules>
 
 

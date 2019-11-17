@@ -13,6 +13,8 @@
       <module fileurl="file://$PROJECT_DIR$/spring-09-aop-01/spring-09-aop-01.iml" filepath="$PROJECT_DIR$/spring-09-aop-01/spring-09-aop-01.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-09-aop-02/spring-09-aop-02.iml" filepath="$PROJECT_DIR$/spring-09-aop-02/spring-09-aop-02.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-09-aop-03/spring-09-aop-03.iml" filepath="$PROJECT_DIR$/spring-09-aop-03/spring-09-aop-03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-10-mybatis/spring-10-mybatis.iml" filepath="$PROJECT_DIR$/spring-10-mybatis/spring-10-mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-11-transaction/spring-11-transaction.iml" filepath="$PROJECT_DIR$/spring-11-transaction/spring-11-transaction.iml" />
     </modules>
   </component>
 </project>
